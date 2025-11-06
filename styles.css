@@ -1,0 +1,233 @@
+/* Importa a fonte Chakra Petch do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* Estiliza o corpo da página */
+:root {
+    --white: #FFFFFF; 
+    --gray-light:#DDDDDD;
+    --gray-meta:#45474b;
+    --gray-dark:#222831;
+    --black: #000000;
+    --blue-dark:#30475E;
+    --light-blue: #5DADE2;
+    --light-yellow: #FFF9C4;
+
+    /* Sombras */ 
+    --shadow-light: rgba(230, 230, 230, 0.2);
+    --shadow-dark: rgba(0, 0, 0, 0.3);
+
+    /* Valores padrão (fallback) */
+    --bg: var(--gray-light);
+    --fontColor: var(--gray-dark);
+    --btnBg: var(--blue-dark);
+    --btnFontColor: var(--white);
+    --footerBg: var(--gray-meta);
+    --footerFontColor: var(--gray-dark);
+    --linkColor: var(--light-blue);
+    --shadow-hover: var(--shadow-dark);
+}
+
+ /* Estiliza modo diurno */
+.light-theme {
+    --bg: var(--gray-light);
+    --fontColor: var(--gray-dark);
+    --btnBg: var(--blue-dark);
+    --btnFontColor: var(--white);
+    --footerBg: var(--white);
+    --footerFontColor: var(--grayDark);
+    --linkColor: var(--light-blue);
+    --shadow-hover: var(--shadow-dark)
+}
+
+/* Estiliza modo noturno */
+.dark-theme {
+    --bg: var(--gray-dark);
+    --fontColor: var(--white);
+    --btnBg: var(--light-yellow);
+    --btnFontColor: var(--blue-dark);
+    --footerBg: var(--blue-dark);
+    --footerFontColor: var(--white);
+    --linkColor: var(--light-blue);
+    --shadow-hover: var(--shadow-light);
+}
+
+/* Estiliza o botão de mudança de tema */
+.btn {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    border: none;
+    color: var(--btnFontColor);
+    background-color: var(--btnBg);
+    cursor: pointer;
+}
+
+.btn:focus {
+    outline-style: none;
+}
+
+/* Estiliza o corpo da página */
+body {
+    font-family: "Chakra Petch", sans-serif;
+    background-color: var(--bg);
+    color: var(--fontColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+/* Estiliza os títulos h1 */
+h1 {
+    font-size: 2.5rem;
+    color: var(--fontColor);
+    text-align: center;
+    letter-spacing: 0.4rem;
+}
+/* Estiliza as seções da página */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-bottom: 3rem;
+}
+
+/* Estiliza os inputs dentro das seções */
+section input {
+    width: 30rem;
+    border:none;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--gray-meta);
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+/* Estiliza os botões dentro das seções */ 
+section button {
+    padding: 0.8rem 1.2rem;
+    border:none;
+    border-radius: 1.5rem;
+    background-color: var(--btnBg);
+    color: var(--btnFontColor);
+    font-size: 1rem;
+    cursor: pointer;
+}
+/* Estiliza os botões dentro das seções */
+section button:hover {
+    background-color: var(--btnBg);
+    box-shadow: 0 6px 8px var(--shadow-hover);
+}
+/* Estiliza a caixa de resultados da pesquisa */
+.resultados-pesquisa {
+    width: 60rem;
+    height: 46vh;
+    overflow-y:auto;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.6rem;
+}
+
+/* Estiliza cada item de resultado */
+.item-resultado {
+    background: var(--footerBg);
+    border-radius: 0.6rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px var(--shadow-hover);
+}
+
+/* Estiliza os titulos dentro dos itens de resultado */
+.item-resultado h2 {
+    font-size: 1.5rem; 
+    color: var(--fontColor);
+}
+
+/* Estiliza os links dentro dos itens de resultado */ 
+.item-resultado a {
+    text-decoration: none;
+    color: var(--linkColor); 
+}
+
+/* Estiliza os links quando são passados o mouse sobre */
+.item-resultado a:hover {
+    text-decoration: underline;
+}
+
+/* Estiliza a descrição dentro dos itens de resultado */
+.descricao-meta {
+    color: var(--fontColor);
+    margin: 0.5rem 0;
+}
+
+/* Estiliza o rodapé da página */
+footer {
+    background-color: var(--footerBg); 
+    color: var(--footerFontColor); 
+    text-align: center; 
+    padding: 0;
+    width: 100%; 
+    position: absolute; 
+    bottom: 0; 
+    font-size: 1rem;
+}
+
+/* Ajustes para tablets e telas médias (até 768px de largura) */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+        letter-spacing: 0.2rem;
+    }
+
+    section input {
+        width: 25rem;
+        padding: 0.8rem;
+    }
+
+    .resultados-pesquisa {
+        width: 40rem; 
+        height: 40vh;
+    }
+
+    .item-resultado h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Ajustes para celulares e telas pequenas (até 480px de largura) */
+
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 1.8rem;
+        letter-spacing: 0.1rem;
+    }
+
+    section input {
+        width: 17rem;
+    }
+
+    section button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .resultados-pesquisa {
+        width: 90%;
+        height: 50vh;
+    }
+
+    .item-resultado h2 {
+        font-size: 1.1rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}
